@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         
             setTimeout(()=>{
                 // imageContainer.src = URL.createObjectURL(imgArray.at(cur));
-                imageContainer.src = (imgArray2.at(cur));
+                imageContainer.src = (imgArray2[cur]);
                 imageContainer.onload = () =>{
                     imageContainer.style.opacity = 1;
                 }
@@ -68,23 +68,13 @@ document.addEventListener('DOMContentLoaded',()=>{
     }
     
     rightButton.addEventListener('click',()=>{
-        if(cur === imgArray.length-1){
-            cur = 0;
-        }
-        else{
-            cur++;
-        }
+        (cur === imgArray2.length-1)?cur = 0:cur++;
         console.log(cur);
         transition(cur);
     })
     
     leftButton.addEventListener('click',()=>{
-        if(cur === 0){
-            cur = imgArray.length - 1;
-        }
-        else{
-            cur--;
-        }
+        (cur === 0)?cur = imgArray2.length - 1:cur--;
         console.log(cur);
         transition(cur);
     })
